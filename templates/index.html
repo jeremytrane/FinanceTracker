@@ -26,7 +26,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Monthly Total</h5>
-                        <p class="card-text h3">${{ "%.2f"|format(total_monthly) }}</p>
+                        <p class="card-text h3">€{{ "%.2f"|format(total_monthly) }}</p>
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Yearly Total</h5>
-                        <p class="card-text h3">${{ "%.2f"|format(total_yearly) }}</p>
+                        <p class="card-text h3">€{{ "%.2f"|format(total_yearly) }}</p>
                     </div>
                 </div>
             </div>
@@ -45,8 +45,8 @@
             <div class="card-header">
                 <h3>{{ category }}</h3>
                 <div class="text-muted">
-                    Monthly: ${{ "%.2f"|format(data.monthly_total) }} | 
-                    Yearly: ${{ "%.2f"|format(data.yearly_total) }}
+                    Monthly: €{{ "%.2f"|format(data.monthly_total) }} | 
+                    Yearly: €{{ "%.2f"|format(data.yearly_total) }}
                 </div>
             </div>
             <div class="card-body">
@@ -66,7 +66,7 @@
                             {% for subscription in data.subscriptions %}
                             <tr>
                                 <td>{{ subscription.name }}</td>
-                                <td>${{ "%.2f"|format(subscription.cost) }}</td>
+                                <td>€{{ "%.2f"|format(subscription.cost) }}</td>
                                 <td>{{ subscription.billing_cycle.capitalize() }}</td>
                                 <td>{{ subscription.next_billing_date.strftime('%Y-%m-%d') }}</td>
                                 <td>{{ subscription.description or 'N/A' }}</td>

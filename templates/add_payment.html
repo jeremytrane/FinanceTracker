@@ -11,7 +11,7 @@
         <h1>Record Payment for {{ subscription.name }}</h1>
         <div class="card mb-4">
             <div class="card-body">
-                <p><strong>Regular Cost:</strong> ${{ "%.2f"|format(subscription.cost) }}</p>
+                <p><strong>Regular Cost:</strong> €{{ "%.2f"|format(subscription.cost) }}</p>
                 <p><strong>Billing Cycle:</strong> {{ subscription.billing_cycle.capitalize() }}</p>
             </div>
         </div>

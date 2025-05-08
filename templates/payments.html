@@ -31,7 +31,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <p><strong>Cost:</strong> ${{ "%.2f"|format(subscription.cost) }}</p>
+                        <p><strong>Cost:</strong> €{{ "%.2f"|format(subscription.cost) }}</p>
                         <p><strong>Billing Cycle:</strong> {{ subscription.billing_cycle.capitalize() }}</p>
                     </div>
                     <div class="col-md-6">
@@ -61,7 +61,7 @@
                             {% for payment in subscription.payments|sort(attribute='payment_date', reverse=True) %}
                             <tr>
                                 <td>{{ payment.payment_date.strftime('%Y-%m-%d') }}</td>
-                                <td>${{ "%.2f"|format(payment.amount) }}</td>
+                                <td>€{{ "%.2f"|format(payment.amount) }}</td>
                                 <td>{{ payment.notes or 'N/A' }}</td>
                             </tr>
                             {% endfor %}
