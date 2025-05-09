@@ -1,65 +1,99 @@
-# Subscription Tracker
+# Finance Tracker
 
-A simple web application to track your monthly and yearly subscriptions, with total cost calculations.
+A Flask-based web application for tracking and managing your subscriptions and recurring payments. Keep track of your monthly and yearly expenses with an easy-to-use interface.
 
 ## Features
 
-- Add, view, and delete subscriptions
-- Track monthly and yearly billing cycles
-- Calculate total monthly and yearly costs
-- Modern, responsive UI using Tailwind CSS
-- SQLite database for data persistence
+- **Subscription Management**
+  - Add, edit, and delete subscriptions
+  - Categorize subscriptions (Entertainment, Software, Utilities, etc.)
+  - Track billing cycles (monthly/yearly)
+  - Set next billing dates
+  - Add descriptions for each subscription
 
-## Setup
+- **Payment History**
+  - Record payment history for each subscription
+  - View payment details including date, amount, and notes
+  - Track payment patterns over time
 
-1. Install Python 3.8 or higher
-2. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+- **Financial Overview**
+  - View total monthly and yearly expenses
+  - See category-wise expense breakdown
+  - Track costs in euros (€)
+  - Monitor upcoming billing dates
 
-## Running the Application
+## Technology Stack
 
-1. Start the application:
-   ```bash
-   python app.py
-   ```
-2. Open your web browser and navigate to `http://localhost:5000`
+- **Backend**: Python with Flask framework
+- **Database**: SQLite with SQLAlchemy ORM
+- **Frontend**: HTML, Bootstrap 5
+- **Features**: 
+  - Flask-SQLAlchemy for database management
+  - Flask templates for dynamic content
+  - Bootstrap for responsive design
 
-## Deployment
+## Installation
 
-### Raspberry Pi Deployment
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/FinanceTracker.git
+cd FinanceTracker
+```
 
-1. Install Python and pip on your Raspberry Pi
-2. Clone this repository
+2. Create and activate a virtual environment:
+```bash
+python -m venv venv
+# On Windows
+.\venv\Scripts\activate
+# On macOS/Linux
+source venv/bin/activate
+```
+
 3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+pip install -r requirements.txt
+```
+
 4. Run the application:
-   ```bash
-   python app.py
-   ```
-5. To run the application in the background:
-   ```bash
-   nohup python app.py &
-   ```
+```bash
+python app.py
+```
 
-### AWS Deployment
+The application will be available at `http://localhost:5000`
 
-1. Create an EC2 instance (t2.micro is sufficient)
-2. Install Python and pip
-3. Clone this repository
-4. Install dependencies
-5. Run the application using a process manager like PM2 or Supervisor
-6. Configure your security group to allow traffic on port 5000
+## Usage
 
-## Security Notes
+1. **Adding Subscriptions**
+   - Click "Add New Subscription"
+   - Fill in the subscription details
+   - Select a category
+   - Set the billing cycle and next billing date
 
-- Change the `SECRET_KEY` in `app.py` before deploying to production
-- Consider adding authentication for production use
-- Use HTTPS in production
+2. **Managing Payments**
+   - Click "Payments" on any subscription
+   - View payment history
+   - Record new payments with notes
+
+3. **Editing Subscriptions**
+   - Click "Edit" on any subscription
+   - Update details as needed
+   - Save changes
+
+4. **Viewing Expenses**
+   - See total monthly and yearly costs
+   - View category-wise breakdown
+   - Monitor upcoming payments
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-MIT 
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Flask framework and its extensions
+- Bootstrap for the UI components
+- SQLAlchemy for database management 
